@@ -1,0 +1,209 @@
+// === Variables ===
+$primary-color: #e63946;
+$dark-color: #0b0c10;
+$light-dark: #1d1e22;
+$text-color: #ffffff;
+$font-main: 'Poppins', sans-serif;
+
+// === Base Styles ===
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: $font-main;
+    background-color: $dark-color;
+    color: $text-color;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+// === Header ===
+.header {
+    background: url('header-bg.jpg') center/cover no-repeat;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 20px 0;
+
+    &__top {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    &__content {
+        text-align: center;
+        margin-top: auto;
+        margin-bottom: 80px;
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+    }
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.nav a {
+    margin-left: 20px;
+    font-weight: 500;
+}
+
+.btn {
+    display: inline-block;
+    background: $primary-color;
+    padding: 12px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: background 0.3s;
+
+    &:hover {
+        background: darken($primary-color, 10%);
+    }
+}
+
+// === Intro Section ===
+.intro {
+    &__grid {
+        display: flex;
+        justify-content: space-between;
+        margin: 60px 0;
+        gap: 20px;
+    }
+
+    &__item {
+        flex: 1;
+        background: $light-dark;
+        padding: 20px;
+        border-radius: 10px;
+        text-align: center;
+    }
+}
+
+// === Highlights Section ===
+.highlights {
+    .highlight {
+        display: flex;
+        align-items: center;
+        margin: 60px 0;
+
+        img {
+            width: 50%;
+            border-radius: 10px;
+        }
+
+        &__text {
+            padding: 20px;
+        }
+
+        &.reverse {
+            flex-direction: row-reverse;
+        }
+    }
+}
+
+// === Secrets Section ===
+.secrets {
+    &__slider {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 30px;
+
+        img {
+            width: 150px;
+            border-radius: 10px;
+        }
+    }
+}
+
+// === Numbers Section ===
+.numbers {
+    &__grid {
+        display: flex;
+        justify-content: center;
+        margin-top: 30px;
+        gap: 40px;
+    }
+
+    &__item {
+        h3 {
+            color: $primary-color;
+            font-size: 36px;
+        }
+
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
+// === Explore Section ===
+.explore {
+    text-align: center;
+    margin: 80px 0;
+
+    p {
+        margin: 20px 0;
+    }
+}
+
+// === Life Section ===
+.life {
+    &__video {
+        img {
+            width: 100%;
+            border-radius: 10px;
+            margin: 20px 0;
+        }
+    }
+
+    &__grid {
+        display: flex;
+        justify-content: space-between;
+        gap: 20px;
+
+        div {
+            flex: 1;
+            background: $light-dark;
+            padding: 20px;
+            border-radius: 10px;
+        }
+    }
+}
+
+// === Responsive ===
+@media (max-width: 768px) {
+
+    .intro__grid,
+    .life__grid,
+    .highlights .highlight {
+        flex-direction: column;
+    }
+
+    .highlights .highlight img {
+        width: 100%;
+    }
+
+    .numbers__grid {
+        flex-direction: column;
+        align-items: center;
+    }
+}
